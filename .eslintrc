@@ -1,0 +1,15 @@
+{
+    env: {
+        node: true,
+        mocha: true,
+        es6: true
+    },
+    parserOptions: {
+        ecmaVersion: 6
+    },
+    extends: "eslint:recommended",
+    rules: {
+        semi: ["error", "always"],
+        no-console: 0
+    }
+}
