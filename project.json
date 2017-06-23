@@ -1,0 +1,7 @@
+{
+  "name": "alexa",
+  "description": "alexa skill for the utah avalanche center forecast",
+  "memory": 128,
+  "timeout": 5,
+  "role": "arn:aws:iam::114755490114:role/lambda_basic_execution"
+}
