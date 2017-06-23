@@ -9,6 +9,7 @@
   "author": "steve gourley <icsteveoh@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "alexa-app": "^4.0.1",
     "alexa-sdk": "^1.0.10",
     "jsdom": "^11.0.0",
     "request": "^2.81.0"
@@ -16,6 +17,8 @@
   "devDependencies": {
     "chai": "^4.0.2",
     "eslint": "^4.0.0",
-    "mocha": "^3.4.2"
+    "express": "^4.15.3",
+    "mocha": "^3.4.2",
+    "supertest": "^3.0.0"
   }
 }
