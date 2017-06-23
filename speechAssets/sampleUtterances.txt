@@ -1,0 +1,15 @@
+GetForecast utah avy
+GetForecast avy forecast
+GetForecast avalanche forecast
+GetForecast utah avy forecast
+GetForecast utah avalanche forecast
+GetForecast tell me the utah avy
+GetForecast tell me the avy forecast
+GetForecast tell me th eavalanche forecast
+GetForecast tell me the utah avy forecast
+GetForecast tell me the utah avalanche forecast
+GetForecast what is the utah avy
+GetForecast what is the avy forecast
+GetForecast what is the avy avalanche forecast
+GetForecast what is the utah avy forecast
+GetForecast what is the utah avalanche forecast
