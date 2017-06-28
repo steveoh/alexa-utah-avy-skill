@@ -1,3 +1,3 @@
-var utahay = require('./utahavy');
+var utahavy = require('./src/utahavy');
 
-exports.handle = utahay.lambda();
+exports.handle = utahavy.lambda();
