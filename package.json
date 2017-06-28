@@ -1,6 +1,6 @@
 {
   "name": "alexa-avy-skill",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "alexa skill for the utah avalanche center forecast",
   "main": "index.js",
   "scripts": {
