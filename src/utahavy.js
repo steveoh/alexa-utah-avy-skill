@@ -4,20 +4,18 @@ const forecast = require('./forecast');
 const app = new alexa.app('utahavy'); // eslint-disable-line new-cap
 
 app.error = function (exception, request, response) {
-    return response.say('Sorry, something bad happened ' + exception);
+    response.say('Sorry, something bad happened ' + exception).send();
 };
 
 app.intent('GetForecast', {
     utterances: ['{tell me the |what is the |}{utah |}{avy |avalanche}{ forecast|}']
 },
 function (request, response) {
-    forecast().then((r) => {
-        return response.say(`The bottom line for today is ${r}`).send();
+    return forecast().then((r) => {
+        response.say(`The bottom line for today is ${r}`).send();
     }, (error) => {
-        return response.say(error.message).send();
+        response.say(error.message).send();
     });
-
-    return false;
 });
 
 app.launch((request, response) => {
