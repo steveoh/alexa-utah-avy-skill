@@ -4,7 +4,8 @@
   "description": "alexa skill for the utah avalanche center forecast",
   "main": "index.js",
   "scripts": {
-    "test": "eslint ./ && mocha"
+    "test": "eslint ./ && mocha",
+    "package": "rm ../utahavy.zip && zip -r ../utahavy.zip *"
   },
   "author": "steve gourley <icsteveoh@gmail.com>",
   "license": "MIT",
@@ -19,5 +20,6 @@
     "express": "^4.15.3",
     "mocha": "^3.4.2",
     "supertest": "^3.0.0"
-  }
+  },
+  "false": {}
 }
