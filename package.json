@@ -10,7 +10,6 @@
   "license": "MIT",
   "dependencies": {
     "alexa-app": "^4.0.1",
-    "alexa-sdk": "^1.0.10",
     "jsdom": "^11.0.0",
     "request": "^2.81.0"
   },
