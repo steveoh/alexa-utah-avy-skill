@@ -1,0 +1,19 @@
+{
+advisories: [
+{
+advisory: {
+date_issued: "Wednesday, September 20, 2017 - 5:18pm",
+date_issued_timestamp: "1505949481",
+special_announcement: "THANK YOU to everyone who attended the 24th Annual Utah Avalanche Center Fundraising Party hosted by Black Diamond with beverages provided by Uinta Brewing. It was great fun and our best one yet with record setting money raised. We couldn&#39;t operate the Utah Avalanche Center without support from a long list of organizations and individuals. We have several events approaching quickly: 10th Annual Utah Snow and Avalanche Workshop Snowbird, Saturday November 4th at 10 a.m. Join us for the 10th&nbsp;annual&nbsp;USAW, where Utah&rsquo;s avalanche community will team up with snow professionals from around the west to share avalanche knowledge.&nbsp;Regional avalanche workshops are the most time and cost effective way to build and refresh advanced avalanche skills available. This is your chance to brush up your skills, learn from from avalanche experts, and brush up your skills before the start of the season. Preregistration closes&nbsp;on Thursday, November&nbsp;2nd at noon. After that, you can get tickets&nbsp;for&nbsp;$45&nbsp;at the door. Lunch, coffee/beverage service, and post workshop happy hour is included. To see the full agenda and to register, go HERE. Banff Mountain Film Festival&rsquo;s Radical Reels Night in Moab Moab, UT, Saturday October 7 at 7 p.m. The Utah Avalanche Center-Moab and Petzl America are presenting&nbsp;The Banff Mountain Film and Book Festival&rsquo;s&nbsp;Radical Reels Night&nbsp;&ndash; a selection of the best high-adrenaline films entered into the Banff Mountain Film and Book Festival competition. The films will be shown at the Grand County High School, Moab, UT. Boondockers 14 Salt Lake City, Saturday, October 21 at 6 p.m. We are excited to announce the Boondockers 14 Premiere at a new, larger venue this year...The Depot. As part of the move, there will only be one showing and all ages are now welcome. ",
+current_conditions: "Fall is here finally and many peaks were dusted with snow on September 15th and more fell the night of the 21st. The photo below from an Alta webcam in Little Cottonwood Canyon was taken the morning of Sept 22nd. We get excited seeing early season snow, but we hope it melts away. Early season snow always becomes weak and faceted, and it can produce avalanches months later that break at the ground. &nbsp; ",
+danger_rose_1: "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+danger_rose_2: "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+danger_rose_3: "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+overall_danger_rose: "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+overall_danger_rose_image: "/sites/default/files/forecast/201709/20170922-102153-6.png",
+overall_danger_rating: "None",
+Region: "Salt Lake"
+}
+}
+]
+}
