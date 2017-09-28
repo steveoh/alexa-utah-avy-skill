@@ -2,6 +2,11 @@
 
 an alexa skill to speak the utah avalanche forecast
 
+### Data
+- `/observations/{region}/json`
+- `/advisory/{region}/json`
+**region**: `logan`, `ogden`, `salt-lake`, `provo`, `skyline`, `moab`
+
 ## Development
 
 1. npm install
