@@ -1,6 +1,12 @@
 # alexa-utah-avy-skill
 
-an alexa skill to speak the utah avalanche forecast
+an alexa skill to speak the utah avalanche forecast.
+
+## Development
+
+### Tools
+
+https://utahavalanchecenter.org/tools/avyheatmap/
 
 ### Data
 - `/observations/{region}/json`
@@ -8,14 +14,9 @@ an alexa skill to speak the utah avalanche forecast
 
 **region**: `logan`, `ogden`, `salt-lake`, `provo`, `skyline`, `moab`
 
-## Development
-
 1. npm install
 1. npm test
 
 ## Publishing
 
-1. npm prune --production
-1. npm run package
-1. login to https://console.aws.amazon.com/lambda/home
-1. upload zip file created
+1. `npm run deploy`
