@@ -2,24 +2,36 @@
   "name": "alexa-avy-skill",
   "version": "1.1.0",
   "description": "alexa skill for the utah avalanche center forecast",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/steveoh/alexa-utah-avy-skill"
+  },
   "main": "index.js",
   "scripts": {
     "test": "eslint ./ && mocha",
-    "package": "rm ../utahavy.zip && zip -r ../utahavy.zip *"
+    "intents": "node src/skill",
+    "deploy": "dpl"
   },
   "author": "steve gourley <icsteveoh@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "alexa-app": "^4.0.1",
-    "jsdom": "^11.0.0",
-    "request": "^2.81.0"
+    "alexa-app": "^4.2.0",
+    "jsdom": "^11.2.0",
+    "request": "^2.83.0"
   },
   "devDependencies": {
     "chai": "^4.0.2",
+    "dpl": "^3.8.0",
     "eslint": "^4.0.0",
     "express": "^4.15.3",
     "mocha": "^3.4.2",
     "supertest": "^3.0.0"
   },
-  "false": {}
+  "files_to_deploy": [
+    "package.json",
+    "project.json",
+    "index.js",
+    "src/"
+  ],
+  "lambda_timeout": 10
 }
