@@ -4,6 +4,13 @@ an alexa skill to speak the utah avalanche forecast.
 
 ## Development
 
+### Utterances
+
+```js
+$ node
+> skill = require('./src/skill')
+```
+
 ### Tools
 
 https://utahavalanchecenter.org/tools/avyheatmap/
