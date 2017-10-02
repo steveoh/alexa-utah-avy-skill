@@ -1,6 +1,6 @@
 module.exports = {
     urls: {
-        forecast: 'https://utahavalanchecenter.org/advisory/${region}',
+        forecast: 'https://utahavalanchecenter.org/advisory/',
         observations: '/observations/${region}/json',
         advisory: '/advisory/${region}/json'
     },
