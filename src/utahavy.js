@@ -17,8 +17,22 @@ app.intent('GetForecast', {
 }, (request, response) => {
     const region = request.slot('region');
 
+    if (!region) {
+        response.say('You can say logan, ogden, salt lake, provo, ' +
+        '<phoneme alphabet="ipa" ph="ˈskaɪlaɪn">skyline</phoneme>, or ' +
+        '<phoneme alphabet="ipa" ph="moʊæb">moab</phoneme>?');
+        response.shouldEndSession(false);
+
+        return response.send();
+    }
+
     return forecast(region).then((r) => {
-        response.say(r).send();
+        response.say(r);
+        response.card({
+            type: 'Simple',
+            content: r
+        });
+        response.send();
     }, (error) => {
         response.say(error.message).send();
     });
@@ -26,7 +40,7 @@ app.intent('GetForecast', {
 
 app.launch((request, response) => {
     response.say('This is the Utah Avalanche Center. ' +
-        'Where will you be rekreating today?');
+        'Where will you be <phoneme alphabet="ipa" ph="\'rɛk\'ri.eɪtɪŋ">recreate</phoneme> today?');
     response.shouldEndSession(false);
     response.send();
 });
@@ -35,7 +49,9 @@ app.intent('AMAZON.HelpIntent', {
     utterances: ['help']
 }, (request, response) => {
     response.say('This skill reads the avalanche forecast for the six regions the UAC monitors. ' +
-          'Tell me where you are going. Choose from logan, ogden, salt lake, provo, skyline, or moab.');
+          'Tell me where you are going. You can say logan, ogden, salt lake, provo, ' +
+          '<phoneme alphabet="ipa" ph="ˈskaɪlaɪn">skyline</phoneme>, or ' +
+          '<phoneme alphabet="ipa" ph="moʊæb">moab</phoneme>?');
     response.shouldEndSession(false);
     response.send();
 });
