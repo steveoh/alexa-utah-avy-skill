@@ -16,6 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "alexa-app": "^4.2.0",
+    "aws-sdk": "^2.126.0",
     "jsdom": "^11.2.0",
     "request": "^2.83.0"
   },
