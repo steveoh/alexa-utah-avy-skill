@@ -6,10 +6,10 @@ const fs = require('fs');
 const express = require('express');
 const request = require('supertest');
 
-describe('utahavy', function () {
+describe('utahavy', () => {
     let server;
 
-    beforeEach(function () {
+    beforeEach(() => {
         var app = express();
         utahavy.express({
             expressApp: app,
@@ -21,15 +21,15 @@ describe('utahavy', function () {
         server = app.listen(port);
     });
 
-    afterEach(function () {
+    afterEach(() => {
         server.close();
     });
 
-    it('responds to invalid data', function () {
+    it('responds to invalid data', () => {
         return request(server)
             .post('/utahavy')
             .send({})
-            .expect(200).then(function (response) {
+            .expect(200).then((response) => {
                 return expect(response.body).to.eql({
                     version: '1.0',
                     response: {
@@ -45,7 +45,7 @@ describe('utahavy', function () {
             });
     });
 
-    it('responds to a launch event', function () {
+    it('responds to a launch event', () => {
         return request(server)
             .post('/utahavy')
             .send({
@@ -53,19 +53,45 @@ describe('utahavy', function () {
                     type: 'LaunchRequest'
                 }
             })
-            .expect(200).then(function (response) {
+            .expect(200).then((response) => {
                 var ssml = response.body.response.outputSpeech.ssml;
 
-                return expect(ssml).to.eql('<speak>This will change to be the real output</speak>');
+                return expect(ssml).to.eql('<speak>This is the Utah Avalanche Center. ' +
+                    'Where will you be <phoneme alphabet="ipa" ph="\'rɛk\'ri.eɪtɪŋ">recreate</phoneme> today?</speak>');
+            });
+    });
+
+    it('response to GetForecast Intent', () => {
+        return request(server)
+            .post('/utahavy')
+            .send({
+                request: {
+                    type: 'IntentRequest',
+                    intent: {
+                        name: 'GetForecast',
+                        slots: {
+                            region: {
+                                name: 'region',
+                                value: 'Salt Lake'
+                            }
+                        }
+                    }
+                }
+            })
+            .expect(200).then((response) => {
+                var ssml = response.body.response.outputSpeech.ssml;
+
+                return expect(ssml).to.eql('<speak>The bottom line for salt-lake is, I can\'t find a bottom line. ' +
+                    'If there is snow, you\'ll have to check the website, otherwise it\'s summer time!</speak>');
             });
     });
 });
 
-describe('parser', function () {
-    it('should return the bottom line', function () {
+describe('parser', () => {
+    it('should return the bottom line', () => {
         const html = fs.readFileSync('test/data/report.html', 'utf8');
 
-        expect(parser(html)).to.equal('The bottom line for today is, Mostly Low hazard early this morning will ' +
+        expect(parser(html)).to.equal('Mostly Low hazard early this morning will ' +
         'quickly rise to a Moderate risk of ' +
         'loose, wet avalanches with warm temperatures and strong sunshine. There also is a Moderate risk of both ' +
         'human-triggered - as well as natural - cornice falls.  Notoriously unpredictable glide avalanches are also ' +
@@ -73,11 +99,11 @@ describe('parser', function () {
     });
 });
 
-describe('sanity', function () {
-    it('forecast', function () {
+describe('sanity', () => {
+    it('forecast', () => {
         expect(forecast).not.to.be.null; // eslint-disable-line no-unused-expressions
     });
-    it('utahavy', function () {
+    it('utahavy', () => {
         expect(utahavy).not.to.be.null; // eslint-disable-line no-unused-expressions
     });
 });

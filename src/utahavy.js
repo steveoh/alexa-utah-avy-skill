@@ -1,5 +1,6 @@
 const alexa = require('alexa-app');
-const forecast = require('./forecast');
+const cache = require('./cache');
+
 
 const app = new alexa.app('utahavy'); // eslint-disable-line new-cap
 module.exports = app;
@@ -26,7 +27,9 @@ app.intent('GetForecast', {
         return response.send();
     }
 
-    return forecast(region).then((r) => {
+    return cache(region).then((r) => {
+        console.log(`saying ${r}`);
+
         response.say(r);
         response.card({
             type: 'Simple',
