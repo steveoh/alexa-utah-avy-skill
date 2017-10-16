@@ -58,8 +58,20 @@ const updateCacheFor = (region, data) => {
             region: {
                 S: region
             },
-            bottomLine: {
-                S: data
+            date: {
+                S: data.date
+            },
+            time: {
+                N: data.time
+            },
+            weather: {
+                S: data.weather
+            },
+            level: {
+                S: data.level
+            },
+            alexa: {
+                S: data.alexa
             },
             GoodUntil: {
                 N: createTimeToLive().toString()
@@ -81,7 +93,7 @@ const checkCacheFor = (params) => {
             db.getItem(params).promise().then((cache) => {
                 // if there is no cached advisory, get it, cache it, return it
                 if (!cache || Object.keys(cache).length < 1) {
-                    console.log('record did not exists. TTL removed. ' +
+                    console.log('record did not exists. TTL removed it. ' +
                         'fetching data from source');
 
                     forecast(params.Key.region.S).then((response) => {
@@ -91,13 +103,19 @@ const checkCacheFor = (params) => {
 
                             resolve(response);
                         });
+                    }, (error) => {
+                        console.log('forecast error');
+                        console.dir(error);
+                        reject(error);
                     });
                 } else {
                     // otherwise return the cached item
                     console.log('cache hit. returning');
                     console.dir(cache);
 
-                    resolve(cache.Item.bottomLine.S);
+                    resolve({
+                        alexa: cache.Item.alexa.S
+                    });
                 }
             });
         } catch (error) {
